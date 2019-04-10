@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>codeforces | Wood</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="你爱的姑娘，在桥下洗着你最喜欢的衣裳。    ——WoodCF438D    线段树传送门： http://codeforces.com/contest/438/problem/D题解：线段树维护区间求和，区间取模（更新），单点修改 维护区间最大值剪枝，记录区间最大值。 复杂度：nlogn(很神)  如果X比区间最大值还大，不用取模更新。否则暴力更新。 y mod x,如果x&amp;gt;y/2,那么y">
+<meta name="keywords" content="codeforces题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="codeforces">
+<meta property="og:url" content="http://yoursite.com/2019/04/10/codeforces/index.html">
+<meta property="og:site_name" content="Wood">
+<meta property="og:description" content="你爱的姑娘，在桥下洗着你最喜欢的衣裳。    ——WoodCF438D    线段树传送门： http://codeforces.com/contest/438/problem/D题解：线段树维护区间求和，区间取模（更新），单点修改 维护区间最大值剪枝，记录区间最大值。 复杂度：nlogn(很神)  如果X比区间最大值还大，不用取模更新。否则暴力更新。 y mod x,如果x&amp;gt;y/2,那么y">
+<meta property="og:locale" content="中文&English">
+<meta property="og:updated_time" content="2019-04-10T07:46:57.387Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="codeforces">
+<meta name="twitter:description" content="你爱的姑娘，在桥下洗着你最喜欢的衣裳。    ——WoodCF438D    线段树传送门： http://codeforces.com/contest/438/problem/D题解：线段树维护区间求和，区间取模（更新），单点修改 维护区间最大值剪枝，记录区间最大值。 复杂度：nlogn(很神)  如果X比区间最大值还大，不用取模更新。否则暴力更新。 y mod x,如果x&amp;gt;y/2,那么y">
+  
+    <link rel="alternate" href="/atom.xml" title="Wood" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Wood</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">ACMer;loser;逐梦失败者；只有经历了一些事，您才会懂得好好珍惜眼前的时光！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-codeforces" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/10/codeforces/" class="article-date">
+  <time datetime="2019-04-10T07:15:58.000Z" itemprop="datePublished">2019-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      codeforces
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="你爱的姑娘，在桥下洗着你最喜欢的衣裳。-——Wood"><a href="#你爱的姑娘，在桥下洗着你最喜欢的衣裳。-——Wood" class="headerlink" title="你爱的姑娘，在桥下洗着你最喜欢的衣裳。    ——Wood"></a>你爱的姑娘，在桥下洗着你最喜欢的衣裳。    ——Wood</h4><h3 id="CF438D-线段树"><a href="#CF438D-线段树" class="headerlink" title="CF438D    线段树"></a>CF438D    线段树</h3><h5 id="传送门：-http-codeforces-com-contest-438-problem-D"><a href="#传送门：-http-codeforces-com-contest-438-problem-D" class="headerlink" title="传送门： http://codeforces.com/contest/438/problem/D"></a>传送门： <a href="http://codeforces.com/contest/438/problem/D" target="_blank" rel="noopener">http://codeforces.com/contest/438/problem/D</a></h5><h5 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h5><p>线段树维护区间求和，区间取模（更新），单点修改</p>
+<p>维护区间最大值剪枝，记录区间最大值。</p>
+<p>复杂度：nlogn(很神)  如果X比区间最大值还大，不用取模更新。否则暴力更新。</p>
+<p>y mod x,如果x&gt;y/2,那么y取模后小于y/2;</p>
+<p>​        如果x&lt;y/2, 取模后也小于y/2;</p>
+<p>所以每个数取模不会超过logn次。</p>
+<h5 id="Code"><a href="#Code" class="headerlink" title="Code:"></a>Code:</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="comment">//区间求和 区间取模 单点更新</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Tree</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> l;</span><br><span class="line">    <span class="keyword">int</span> r;</span><br><span class="line">    LL sum;</span><br><span class="line">    LL  lazy; <span class="comment">//延迟标记</span></span><br><span class="line">    LL maxn;</span><br><span class="line">&#125;;</span><br><span class="line">Tree tree[N*<span class="number">4</span>];</span><br><span class="line"><span class="keyword">int</span> ma[N];</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="function">LL <span class="title">max</span><span class="params">(LL a, LL b)</span></span>&#123;</span><br><span class="line"><span class="keyword">return</span> a&gt;b?a:b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">up</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; <span class="comment">//更新区间和</span></span><br><span class="line">    tree[x].sum = tree[x&lt;&lt;<span class="number">1</span>].sum+tree[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].sum;</span><br><span class="line">    tree[x].maxn = max(tree[x&lt;&lt;<span class="number">1</span>].maxn,tree[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].maxn);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//延迟标记 用于区间加</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">      LL t = tree[x].lazy;</span><br><span class="line">      <span class="keyword">if</span>(t)&#123;</span><br><span class="line">        tree[x].lazy =<span class="number">0</span>;</span><br><span class="line">        tree[x&lt;&lt;<span class="number">1</span>].sum+=(tree[x&lt;&lt;<span class="number">1</span>].r-tree[x&lt;&lt;<span class="number">1</span>].l+<span class="number">1</span>)*t;</span><br><span class="line">        tree[x&lt;&lt;<span class="number">1</span>].lazy+=t;</span><br><span class="line">        tree[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].sum+=(tree[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].r - tree[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].l+<span class="number">1</span>)*t;</span><br><span class="line">        tree[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].lazy+=t;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//build</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    tree[x].l=l;</span><br><span class="line">    tree[x].r=r;</span><br><span class="line">    tree[x].lazy=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(l==r)&#123;</span><br><span class="line">         tree[x].maxn = tree[x].sum=ma[l];</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l+( (r-l)&gt;&gt;<span class="number">1</span>);</span><br><span class="line">        build(x&lt;&lt;<span class="number">1</span>,l,mid);</span><br><span class="line">        build(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,mid+<span class="number">1</span>,r);</span><br><span class="line">        up(x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//单点更新 x k v</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update1</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> k,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ll = tree[x].l;</span><br><span class="line">    <span class="keyword">int</span> rr = tree[x].r;</span><br><span class="line">    <span class="keyword">if</span>(ll==rr)&#123;</span><br><span class="line">        tree[x].maxn=tree[x].sum=v;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid = ll+((rr-ll)&gt;&gt;<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(k&lt;=mid) update1(x&lt;&lt;<span class="number">1</span>,k,v);</span><br><span class="line">    <span class="keyword">else</span>  update1(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,k,v);</span><br><span class="line">    up(x);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//区间加操作 x l r v</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ll = tree[x].l;</span><br><span class="line">    <span class="keyword">int</span> rr = tree[x].r;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;r)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ll==l&amp;&amp;rr==r)&#123;</span><br><span class="line">        tree[x].sum += (tree[x].r - tree[x].l+<span class="number">1</span>)*v;</span><br><span class="line">        tree[x].lazy+=v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = ll+((rr-ll)&gt;&gt;<span class="number">1</span>);</span><br><span class="line">        down(x);</span><br><span class="line">        update(x&lt;&lt;<span class="number">1</span>,l,min(mid,r),v);</span><br><span class="line">        update(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,max(mid+<span class="number">1</span>,l),r,v);</span><br><span class="line">        up(x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//区间取模</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">updateModify</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ll = tree[x].l;</span><br><span class="line">    <span class="keyword">int</span> rr = tree[x].r;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;tree[x].r || r&lt;tree[x].l || v&gt;tree[x].maxn) <span class="keyword">return</span>;  <span class="comment">//maxn主要用于在这剪枝</span></span><br><span class="line">    <span class="keyword">if</span>(tree[x].l==tree[x].r)&#123;</span><br><span class="line">        tree[x].sum = tree[x].maxn = tree[x].sum % v;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid = ll+((rr-ll)&gt;&gt;<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(r&lt;=mid) updateModify(x&lt;&lt;<span class="number">1</span>,l,r,v);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(l&gt;mid) updateModify(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,l,r,v);</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        updateModify(x&lt;&lt;<span class="number">1</span>,l,mid,v);</span><br><span class="line">        updateModify(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,mid+<span class="number">1</span>,r,v);</span><br><span class="line">    &#125;</span><br><span class="line">    up(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//区间查询</span></span><br><span class="line"><span class="function">LL <span class="title">quary</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ll = tree[x].l;</span><br><span class="line">    <span class="keyword">int</span> rr = tree[x].r;</span><br><span class="line">    <span class="keyword">if</span>(l&gt;r) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(ll==l&amp;&amp;rr==r)&#123;</span><br><span class="line">        <span class="keyword">return</span> tree[x].sum;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = ll + ((rr-ll)&gt;&gt;<span class="number">1</span>);</span><br><span class="line">        LL ans=<span class="number">0</span>;</span><br><span class="line">        down(x);</span><br><span class="line">        ans+=quary(x&lt;&lt;<span class="number">1</span>,l,min(mid,r));</span><br><span class="line">        ans+=quary(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,max(mid+<span class="number">1</span>,l),r);</span><br><span class="line">        up(x);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;ma[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    build(<span class="number">1</span>,<span class="number">1</span>,n);</span><br><span class="line">    <span class="keyword">while</span>(m--)&#123;</span><br><span class="line">        <span class="keyword">int</span> op,a,b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;op,&amp;a,&amp;b);</span><br><span class="line">        <span class="keyword">switch</span>(op)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,quary(<span class="number">1</span>,a,b));</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            LL v;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;v);</span><br><span class="line">            updateModify(<span class="number">1</span>,a,b,v);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            update1(<span class="number">1</span>,a,b);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/10/codeforces/" data-id="cjuawvp480000kstpdhwx3set" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/codeforces题解/">codeforces题解</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/01/matlab知识总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">matlab知识总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Digital-Image/">Digital Image</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/N-Puzzle-Problem/">N-Puzzle Problem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zobrist-Hash/">Zobrist Hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codeforces题解/">codeforces题解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab基本语法-各种函数/">matlab基本语法&各种函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/千图成像/">千图成像</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我需要光/">我需要光</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/逆序对/">逆序对</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链接/">链接</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/Digital-Image/" style="font-size: 10px;">Digital Image</a> <a href="/tags/N-Puzzle-Problem/" style="font-size: 10px;">N-Puzzle Problem</a> <a href="/tags/Zobrist-Hash/" style="font-size: 10px;">Zobrist Hash</a> <a href="/tags/codeforces题解/" style="font-size: 10px;">codeforces题解</a> <a href="/tags/matlab基本语法-各种函数/" style="font-size: 10px;">matlab基本语法&各种函数</a> <a href="/tags/千图成像/" style="font-size: 10px;">千图成像</a> <a href="/tags/我需要光/" style="font-size: 10px;">我需要光</a> <a href="/tags/逆序对/" style="font-size: 10px;">逆序对</a> <a href="/tags/链接/" style="font-size: 10px;">链接</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/10/codeforces/">codeforces</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/01/matlab知识总结/">matlab知识总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/28/千图成像/">千图成像</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/26/链接/">链接</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/26/考研倒计时/">考研倒计时</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Wood<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
