@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Wood">
 <meta property="og:description" content="基础知识12345678910111213141516171819%读取imread();%显示imshow();%写入imwrite();%转化为灰度图像rgb2gray();%裁剪imresize(Img,[size,size]);%创建窗口显示figure();subplot(cloum,row,num);title(&apos;note&apos;);%操作快捷键 %多行注释 Ctrl+R%消除注释 Ctrl">
 <meta property="og:locale" content="中文&English">
-<meta property="og:updated_time" content="2019-04-01T16:03:54.379Z">
+<meta property="og:updated_time" content="2019-04-11T16:44:11.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="matlab知识总结">
 <meta name="twitter:description" content="基础知识12345678910111213141516171819%读取imread();%显示imshow();%写入imwrite();%转化为灰度图像rgb2gray();%裁剪imresize(Img,[size,size]);%创建窗口显示figure();subplot(cloum,row,num);title(&apos;note&apos;);%操作快捷键 %多行注释 Ctrl+R%消除注释 Ctrl">
@@ -98,11 +98,11 @@
 <h5 id="length"><a href="#length" class="headerlink" title="length();"></a>length();</h5><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、<span class="built_in">length</span>函数：计算向量或矩阵的长度</span><br><span class="line"><span class="number">2</span>、用法说明</span><br><span class="line">      y = <span class="built_in">length</span>(x) 函数计算指定向量或矩阵的长度y。如果参数变量x是向量，则返回其长度；如果参数变量是非空矩阵，则<span class="built_in">length</span>(x)与<span class="built_in">max</span>(<span class="built_in">size</span>(x))等价</span><br></pre></td></tr></table></figure>
 <h5 id="sort"><a href="#sort" class="headerlink" title="sort();"></a>sort();</h5><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    Y = <span class="built_in">sort</span>(X,DIM,MODE)</span><br><span class="line">    has two optional parameters.  </span><br><span class="line">    DIM selects a dimension along which to <span class="built_in">sort</span>.<span class="comment">%指定对哪个维度进行排序</span></span><br><span class="line">    MODE selects the direction of the <span class="built_in">sort</span>. <span class="comment">%指定是升序还是降序</span></span><br><span class="line">       <span class="string">'ascend'</span> results in ascending order</span><br><span class="line">       <span class="string">'descend'</span> results in descending order</span><br><span class="line">    The result is in Y which has the same shape and <span class="built_in">type</span> as X.<span class="comment">%返回结果的shape和类型与输入一致</span></span><br></pre></td></tr></table></figure>
 <h5 id="zero"><a href="#zero" class="headerlink" title="zero();"></a>zero();</h5><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">zeros</span>函数——生成零矩阵</span><br><span class="line"></span><br><span class="line">【<span class="built_in">zeros</span>的使用方法】</span><br><span class="line"></span><br><span class="line">B=<span class="built_in">zeros</span>(n)：生成n×n全零阵。</span><br><span class="line"></span><br><span class="line">B=<span class="built_in">zeros</span>(m,n)：生成m×n全零阵。</span><br><span class="line"></span><br><span class="line">B=<span class="built_in">zeros</span>([m n])：生成m×n全零阵。</span><br><span class="line"></span><br><span class="line">B=<span class="built_in">zeros</span>(d1,d2,d3……)：生成d1×d2×d3×……全零阵或数组。</span><br><span class="line"></span><br><span class="line">B=<span class="built_in">zeros</span>([d1 d2 d3……])：生成d1×d2×d3×……全零阵或数组。</span><br><span class="line"></span><br><span class="line">B=<span class="built_in">zeros</span>(<span class="built_in">size</span>(A))：生成与矩阵A相同大小的全零阵。</span><br></pre></td></tr></table></figure>
-
+<h5 id="imshit-直方图的显示"><a href="#imshit-直方图的显示" class="headerlink" title="imshit() 直方图的显示"></a>imshit() 直方图的显示</h5><h5 id="imcomplement-取反"><a href="#imcomplement-取反" class="headerlink" title="imcomplement() 取反"></a>imcomplement() 取反</h5><h5 id="histeq-使用直方图均衡"><a href="#histeq-使用直方图均衡" class="headerlink" title="histeq()  使用直方图均衡"></a>histeq()  使用直方图均衡</h5>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/01/matlab知识总结/" data-id="cjuawvp4v0001kstpx7l18h8z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/01/matlab知识总结/" data-id="cjucvs9sy0000totp3ceu75i6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/matlab基本语法-各种函数/">matlab基本语法&各种函数</a></li></ul>
@@ -144,7 +144,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Digital-Image/">Digital Image</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/N-Puzzle-Problem/">N-Puzzle Problem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zobrist-Hash/">Zobrist Hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codeforces题解/">codeforces题解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab基本语法-各种函数/">matlab基本语法&各种函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/千图成像/">千图成像</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我需要光/">我需要光</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/逆序对/">逆序对</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链接/">链接</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Digital-Image/">Digital Image</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/N-Puzzle-Problem/">N-Puzzle Problem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zobrist-Hash/">Zobrist Hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codeforces题解/">codeforces题解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlab基本语法-各种函数/">matlab基本语法&各种函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/千图成像/">千图成像</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图像增强/">图像增强</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/我需要光/">我需要光</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数字图像处理/">数字图像处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/逆序对/">逆序对</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链接/">链接</a></li></ul>
     </div>
   </div>
 
@@ -154,7 +154,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/Digital-Image/" style="font-size: 10px;">Digital Image</a> <a href="/tags/N-Puzzle-Problem/" style="font-size: 10px;">N-Puzzle Problem</a> <a href="/tags/Zobrist-Hash/" style="font-size: 10px;">Zobrist Hash</a> <a href="/tags/codeforces题解/" style="font-size: 10px;">codeforces题解</a> <a href="/tags/matlab基本语法-各种函数/" style="font-size: 10px;">matlab基本语法&各种函数</a> <a href="/tags/千图成像/" style="font-size: 10px;">千图成像</a> <a href="/tags/我需要光/" style="font-size: 10px;">我需要光</a> <a href="/tags/逆序对/" style="font-size: 10px;">逆序对</a> <a href="/tags/链接/" style="font-size: 10px;">链接</a>
+      <a href="/tags/AI/" style="font-size: 10px;">AI</a> <a href="/tags/Digital-Image/" style="font-size: 20px;">Digital Image</a> <a href="/tags/N-Puzzle-Problem/" style="font-size: 10px;">N-Puzzle Problem</a> <a href="/tags/Zobrist-Hash/" style="font-size: 10px;">Zobrist Hash</a> <a href="/tags/codeforces题解/" style="font-size: 10px;">codeforces题解</a> <a href="/tags/matlab基本语法-各种函数/" style="font-size: 10px;">matlab基本语法&各种函数</a> <a href="/tags/千图成像/" style="font-size: 10px;">千图成像</a> <a href="/tags/图像增强/" style="font-size: 10px;">图像增强</a> <a href="/tags/我需要光/" style="font-size: 10px;">我需要光</a> <a href="/tags/数字图像处理/" style="font-size: 10px;">数字图像处理</a> <a href="/tags/逆序对/" style="font-size: 10px;">逆序对</a> <a href="/tags/链接/" style="font-size: 10px;">链接</a>
     </div>
   </div>
 
@@ -176,6 +176,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/10/空间域图像增强/">空间域图像增强</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/10/codeforces/">codeforces</a>
           </li>
         
@@ -189,10 +193,6 @@
         
           <li>
             <a href="/2019/03/26/链接/">链接</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/26/考研倒计时/">考研倒计时</a>
           </li>
         
       </ul>
